@@ -7,7 +7,7 @@ def parse_line(line: str) -> Tuple[int, int]:
     return (int(first), int(second))
 
 
-with open("input.txt", "r") as f:
+with open("01/input.txt", "r") as f:
     lines = f.readlines()
 
 
