@@ -6,6 +6,7 @@ Point.__add__ = lambda self, other: Point(self.x + other.x, self.y + other.y)
 Point.__sub__ = lambda self, other: Point(self.x - other.x, self.y - other.y)
 Point.__mul__ = lambda self, scalar: Point(self.x * scalar, self.y * scalar)
 Point.__rmul__ = lambda self, scalar: self * scalar
+Point.__mod__ = lambda self, other: Point(self.x % other.x, self.y % other.y)
 
 
 class Grid:
