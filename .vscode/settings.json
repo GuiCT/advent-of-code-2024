@@ -2,5 +2,6 @@
     "editor.formatOnSave": true,
     "python.analysis.extraPaths": [
         "${workspaceFolder}"
-    ]
+    ],
+    "python.analysis.typeCheckingMode": "strict"
 }
