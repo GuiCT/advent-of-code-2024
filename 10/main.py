@@ -80,16 +80,12 @@ def get_paths_to_trailends(
 
 scores_p1_sum = 0
 scores_p2_sum = 0
-for i in range(row_count):
-    for j in range(column_count):
-        is_zero = char_matrix[i, j] == 0
-        if not is_zero:
-            continue
-        origin = Point(i, j)
-        trailends, precedings = get_trails_from_this_origin(origin)
-        scores_p1_sum += len(trailends)
-        paths = get_paths_to_trailends(origin, trailends, precedings)
-        scores_p2_sum += len(paths)
+for (i, j) in zip(*np.where(char_matrix == 0)):
+    origin = Point(j, i)
+    trailends, precedings = get_trails_from_this_origin(origin)
+    scores_p1_sum += len(trailends)
+    paths = get_paths_to_trailends(origin, trailends, precedings)
+    scores_p2_sum += len(paths)
 
 
 print("Part 1 result", scores_p1_sum)
